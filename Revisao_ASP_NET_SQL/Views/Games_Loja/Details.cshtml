@@ -1,0 +1,52 @@
+﻿@model Revisao_ASP_NET_SQL.Models.Game_Loja
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Games_Loja</h4>
+
+    <hr />
+
+    <dl class="row">
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GameId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GameId)
+        </dd>
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LojaId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LojaId)
+        </dd>
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Game)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Game.Nome)
+        </dd>
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Loja)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Loja.Nome)
+        </dd>
+
+    </dl>
+</div>
+
+<div>
+
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+
+</div>
