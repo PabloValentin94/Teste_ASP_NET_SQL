@@ -53,8 +53,10 @@ namespace Revisao_ASP_NET_SQL.Controllers
         }
 
         // GET: Games/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            ViewBag.Consoles = await _context.Consoles.ToListAsync();
+
             return View();
         }
 
@@ -91,6 +93,8 @@ namespace Revisao_ASP_NET_SQL.Controllers
             {
                 return NotFound();
             }
+
+            ViewBag.Consoles = await _context.Consoles.ToListAsync();
 
             return View(game);
         }

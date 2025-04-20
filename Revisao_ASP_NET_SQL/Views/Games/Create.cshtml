@@ -26,7 +26,13 @@
             <div class="form-group">
 
                 <label asp-for="ConsoleId" class="control-label"></label>
-                <input asp-for="ConsoleId" class="form-control" />
+                <select asp-for="ConsoleId" class="form-control">
+
+                    @foreach (Revisao_ASP_NET_SQL.Models.Console console in ViewBag.Consoles) {
+                        <option value="@console.Id">@console.Nome</option>
+                    }
+
+                </select>
                 <span asp-validation-for="ConsoleId" class="text-danger"></span>
 
             </div>

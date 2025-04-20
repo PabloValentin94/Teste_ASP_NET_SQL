@@ -20,7 +20,13 @@
             <div class="form-group">
 
                 <label asp-for="GameId" class="control-label"></label>
-                <input asp-for="GameId" class="form-control" />
+                <select asp-for="GameId" class="form-control">
+
+                    @foreach (Revisao_ASP_NET_SQL.Models.Game game in ViewBag.Games) {
+                        <option value="@game.Id">@game.Nome</option>
+                    }
+
+                </select>
                 <span asp-validation-for="GameId" class="text-danger"></span>
 
             </div>
@@ -28,7 +34,13 @@
             <div class="form-group">
 
                 <label asp-for="LojaId" class="control-label"></label>
-                <input asp-for="LojaId" class="form-control" />
+                <select asp-for="LojaId" class="form-control">
+
+                    @foreach (Revisao_ASP_NET_SQL.Models.Loja loja in ViewBag.Lojas) {
+                        <option value="@loja.Id">@loja.Nome</option>
+                    }
+
+                </select>
                 <span asp-validation-for="LojaId" class="text-danger"></span>
 
             </div>

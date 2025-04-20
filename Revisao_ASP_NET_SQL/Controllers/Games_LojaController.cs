@@ -57,8 +57,12 @@ namespace Revisao_ASP_NET_SQL.Controllers
         }
 
         // GET: Games_Loja/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            ViewBag.Games = await _context.Games.ToListAsync();
+
+            ViewBag.Lojas = await _context.Lojas.ToListAsync();
+
             return View();
         }
 
@@ -95,6 +99,10 @@ namespace Revisao_ASP_NET_SQL.Controllers
             {
                 return NotFound();
             }
+
+            ViewBag.Games = await _context.Games.ToListAsync();
+
+            ViewBag.Lojas = await _context.Lojas.ToListAsync();
 
             return View(game_Loja);
         }
